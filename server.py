@@ -77,7 +77,7 @@ class Handler(BaseHTTPRequestHandler):
             self._send_json(404, {'error': 'Not found'})
 
     def do_POST(self):
-        if self.path in ['/api/projects', '/api/analysis', '/api/ai']:
+        if self.path in ['/api/projects', '/api/analysis','/api/module-design','/api/ai']:
             content_length = int(self.headers.get('Content-Length', '0'))
             body = self.rfile.read(content_length).decode('utf-8')
 
