@@ -44,12 +44,6 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         parsed = urlparse(self.path)
-        
-        if parsed.path == '/':
-        self._send_json(200, {
-            'message': 'PWTP Backend Running Successfully'
-        })
-        return
 
         if parsed.path == '/api/projects':
             data = load_data()
